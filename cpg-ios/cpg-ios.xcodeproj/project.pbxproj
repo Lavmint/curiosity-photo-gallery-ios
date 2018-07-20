@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCF2C0F3A9AE800521CEE89C /* Pods_CuriosityPhotoGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9660D892234F2889841FBBE8 /* Pods_CuriosityPhotoGallery.framework */; };
+		FAE3A52A210284240061EB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3A529210284240061EB92 /* AppDelegate.swift */; };
+		FAE3A52C210284240061EB92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3A52B210284240061EB92 /* ViewController.swift */; };
+		FAE3A52F210284240061EB92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE3A52D210284240061EB92 /* Main.storyboard */; };
+		FAE3A532210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE3A530210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld */; };
+		FAE3A534210284250061EB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3A533210284250061EB92 /* Assets.xcassets */; };
+		FAE3A537210284250061EB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE3A535210284250061EB92 /* LaunchScreen.storyboard */; };
+		FAE3A57E210285940061EB92 /* NasaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE3A57C2102858F0061EB92 /* NasaService.framework */; };
+		FAE3A57F210285940061EB92 /* NasaService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAE3A57C2102858F0061EB92 /* NasaService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAE3A580210285940061EB92 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FAE3A57F210285940061EB92 /* NasaService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9660D892234F2889841FBBE8 /* Pods_CuriosityPhotoGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuriosityPhotoGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC8E65361861E6AB1D81DF60 /* Pods-CuriosityPhotoGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuriosityPhotoGallery.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-CuriosityPhotoGallery/Pods-CuriosityPhotoGallery.debug.xcconfig"; sourceTree = "<group>"; };
+		CCD21F5966F5B3B8797A2909 /* Pods-CuriosityPhotoGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuriosityPhotoGallery.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CuriosityPhotoGallery/Pods-CuriosityPhotoGallery.release.xcconfig"; sourceTree = "<group>"; };
+		FAE3A526210284240061EB92 /* CuriosityPhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosityPhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE3A529210284240061EB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAE3A52B210284240061EB92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAE3A52E210284240061EB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAE3A531210284240061EB92 /* CuriosityPhotoGallery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CuriosityPhotoGallery.xcdatamodel; sourceTree = "<group>"; };
+		FAE3A533210284250061EB92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAE3A536210284250061EB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAE3A538210284250061EB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE3A57C2102858F0061EB92 /* NasaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NasaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAE3A523210284240061EB92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE3A57E210285940061EB92 /* NasaService.framework in Frameworks */,
+				BCF2C0F3A9AE800521CEE89C /* Pods_CuriosityPhotoGallery.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81EC6A0259455EF2711D0FB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC8E65361861E6AB1D81DF60 /* Pods-CuriosityPhotoGallery.debug.xcconfig */,
+				CCD21F5966F5B3B8797A2909 /* Pods-CuriosityPhotoGallery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA4D82E32102878400FBF27E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3A52B210284240061EB92 /* ViewController.swift */,
+				FAE3A529210284240061EB92 /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FA4D82E42102878900FBF27E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3A533210284250061EB92 /* Assets.xcassets */,
+				FA4D82E5210287A200FBF27E /* Storyboards */,
+				FAE3A530210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA4D82E5210287A200FBF27E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3A535210284250061EB92 /* LaunchScreen.storyboard */,
+				FAE3A52D210284240061EB92 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FAE3A51D210284240061EB92 = {
+			isa = PBXGroup;
+			children = (
+				FAE3A528210284240061EB92 /* CuriosityPhotoGallery */,
+				FAE3A527210284240061EB92 /* Products */,
+				FAE3A57B2102858F0061EB92 /* Frameworks */,
+				81EC6A0259455EF2711D0FB6 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		FAE3A527210284240061EB92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3A526210284240061EB92 /* CuriosityPhotoGallery.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAE3A528210284240061EB92 /* CuriosityPhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				FA4D82E42102878900FBF27E /* Resources */,
+				FA4D82E32102878400FBF27E /* Sources */,
+				FAE3A538210284250061EB92 /* Info.plist */,
+			);
+			path = CuriosityPhotoGallery;
+			sourceTree = "<group>";
+		};
+		FAE3A57B2102858F0061EB92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3A57C2102858F0061EB92 /* NasaService.framework */,
+				9660D892234F2889841FBBE8 /* Pods_CuriosityPhotoGallery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAE3A525210284240061EB92 /* CuriosityPhotoGallery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE3A53B210284250061EB92 /* Build configuration list for PBXNativeTarget "CuriosityPhotoGallery" */;
+			buildPhases = (
+				3853D954E640AED3A91374FA /* [CP] Check Pods Manifest.lock */,
+				FAE3A522210284240061EB92 /* Sources */,
+				FAE3A523210284240061EB92 /* Frameworks */,
+				FAE3A524210284240061EB92 /* Resources */,
+				FAE3A580210285940061EB92 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CuriosityPhotoGallery;
+			productName = CuriosityPhotoGallery;
+			productReference = FAE3A526210284240061EB92 /* CuriosityPhotoGallery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAE3A51E210284240061EB92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Alexey Averkin";
+				TargetAttributes = {
+					FAE3A525210284240061EB92 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = FAE3A521210284240061EB92 /* Build configuration list for PBXProject "cpg-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAE3A51D210284240061EB92;
+			productRefGroup = FAE3A527210284240061EB92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAE3A525210284240061EB92 /* CuriosityPhotoGallery */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAE3A524210284240061EB92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE3A537210284250061EB92 /* LaunchScreen.storyboard in Resources */,
+				FAE3A534210284250061EB92 /* Assets.xcassets in Resources */,
+				FAE3A52F210284240061EB92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3853D954E640AED3A91374FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CuriosityPhotoGallery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAE3A522210284240061EB92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE3A532210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld in Sources */,
+				FAE3A52C210284240061EB92 /* ViewController.swift in Sources */,
+				FAE3A52A210284240061EB92 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FAE3A52D210284240061EB92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAE3A52E210284240061EB92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FAE3A535210284250061EB92 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAE3A536210284250061EB92 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAE3A539210284250061EB92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAE3A53A210284250061EB92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAE3A53C210284250061EB92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC8E65361861E6AB1D81DF60 /* Pods-CuriosityPhotoGallery.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8245AS67CL;
+				INFOPLIST_FILE = CuriosityPhotoGallery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAE3A53D210284250061EB92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCD21F5966F5B3B8797A2909 /* Pods-CuriosityPhotoGallery.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8245AS67CL;
+				INFOPLIST_FILE = CuriosityPhotoGallery/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAE3A521210284240061EB92 /* Build configuration list for PBXProject "cpg-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE3A539210284250061EB92 /* Debug */,
+				FAE3A53A210284250061EB92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAE3A53B210284250061EB92 /* Build configuration list for PBXNativeTarget "CuriosityPhotoGallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE3A53C210284250061EB92 /* Debug */,
+				FAE3A53D210284250061EB92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAE3A530210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAE3A531210284240061EB92 /* CuriosityPhotoGallery.xcdatamodel */,
+			);
+			currentVersion = FAE3A531210284240061EB92 /* CuriosityPhotoGallery.xcdatamodel */;
+			path = CuriosityPhotoGallery.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FAE3A51E210284240061EB92 /* Project object */;
+}
