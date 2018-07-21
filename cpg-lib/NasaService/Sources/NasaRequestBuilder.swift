@@ -30,7 +30,9 @@ class NasaRequestBuilder {
         switch method {
         case .get:
             guard let url = appendGetParameters(url: url, query: createGetQuery(mutableParameters)) else { return nil }
-            return URLRequest(url: url)
+            var request = URLRequest(url: url)
+            request.httpMethod = method.rawValue
+            return request
         }
     }
     
