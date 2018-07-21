@@ -13,29 +13,16 @@ class PhotoGalleryViewController: UIViewController, GenericView {
 
     typealias View = PhotoGalleryView
     
-    var service: NasaService!
-    var images: [UIImage] = []
-    
+    lazy var viewModel: PhotoGalleryViewModel = {
+        return PhotoGalleryViewModel()
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Curiosity Photo Gallery"
-        service = NasaService()
-        service.marsPhotosAPIGroup.latestPhotos(rover: .curiosity, page: 1) { (result) in
-            switch result {
-            case .success(let obj):
-                let imageURLs = obj?.latestPhotos?.compactMap({ $0.imgSrc }) ?? []
-                var images: [UIImage] = []
-                for url in imageURLs {
-                    guard let data = try? Data.init(contentsOf: url) else { continue }
-                    guard let img = UIImage(data: data) else { continue }
-                    images.append(img)
-                }
-                self.images = images
-                DispatchQueue.main.async {
-                    self.genericView.collectionView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
+        viewModel.fetchImages { (error) in
+            DispatchQueue.main.async {
+                self.genericView.collectionView.reloadData()
             }
         }
     }
@@ -44,7 +31,7 @@ class PhotoGalleryViewController: UIViewController, GenericView {
 extension PhotoGalleryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return viewModel.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,7 +41,7 @@ extension PhotoGalleryViewController: UICollectionViewDataSource, UICollectionVi
         )
         if let thumbnailCell = cell as? ThumbnailCollectionViewCell {
             thumbnailCell.delegate = self
-            thumbnailCell.imageView.image = images[indexPath.item]
+            thumbnailCell.imageView.image = viewModel.images[indexPath.item]
         }
         return cell
     }

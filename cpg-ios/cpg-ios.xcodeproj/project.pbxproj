@@ -20,6 +20,8 @@
 		FAD6899E2103831700CAE1A0 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6899D2103831700CAE1A0 /* NibLoadableView.swift */; };
 		FAD689A121038C3600CAE1A0 /* PhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD689A021038C3600CAE1A0 /* PhotoView.xib */; };
 		FAD689A421038C4600CAE1A0 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689A321038C4600CAE1A0 /* PhotoView.swift */; };
+		FAD689A82103968B00CAE1A0 /* RoverPhotoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689A72103968B00CAE1A0 /* RoverPhotoWorker.swift */; };
+		FAD689AB210396D900CAE1A0 /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689AA210396D900CAE1A0 /* NSPersistentContainer.swift */; };
 		FAE3A52A210284240061EB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3A529210284240061EB92 /* AppDelegate.swift */; };
 		FAE3A532210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE3A530210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld */; };
 		FAE3A534210284250061EB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3A533210284250061EB92 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		FAD6899D2103831700CAE1A0 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		FAD689A021038C3600CAE1A0 /* PhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoView.xib; sourceTree = "<group>"; };
 		FAD689A321038C4600CAE1A0 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		FAD689A72103968B00CAE1A0 /* RoverPhotoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoWorker.swift; sourceTree = "<group>"; };
+		FAD689AA210396D900CAE1A0 /* NSPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
 		FAE3A526210284240061EB92 /* CuriosityPhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosityPhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE3A529210284240061EB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE3A531210284240061EB92 /* CuriosityPhotoGallery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CuriosityPhotoGallery.xcdatamodel; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			children = (
 				FAD6898721037F0B00CAE1A0 /* Protocol */,
 				FAD6898621037EFB00CAE1A0 /* Module */,
+				FAD689A62103958E00CAE1A0 /* Worker */,
+				FAD689A9210396CC00CAE1A0 /* Extension */,
 				FAE3A529210284240061EB92 /* AppDelegate.swift */,
 			);
 			path = Sources;
@@ -181,6 +187,22 @@
 				FAD689A321038C4600CAE1A0 /* PhotoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FAD689A62103958E00CAE1A0 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				FAD689A72103968B00CAE1A0 /* RoverPhotoWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		FAD689A9210396CC00CAE1A0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAD689AA210396D900CAE1A0 /* NSPersistentContainer.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		FAE3A51D210284240061EB92 = {
@@ -322,7 +344,9 @@
 				FAD689A421038C4600CAE1A0 /* PhotoView.swift in Sources */,
 				FAD6898021037EB100CAE1A0 /* PhotoGalleryViewController.swift in Sources */,
 				FAD6898921037F2C00CAE1A0 /* IdentifierReferencable.swift in Sources */,
+				FAD689AB210396D900CAE1A0 /* NSPersistentContainer.swift in Sources */,
 				FAD6899E2103831700CAE1A0 /* NibLoadableView.swift in Sources */,
+				FAD689A82103968B00CAE1A0 /* RoverPhotoWorker.swift in Sources */,
 				FAD68991210380E900CAE1A0 /* PhotoViewController.swift in Sources */,
 				FAD6898421037EF600CAE1A0 /* ThumbnailCollectionViewCell.swift in Sources */,
 				FAD6899C210382DC00CAE1A0 /* PhotoGalleryView.swift in Sources */,
