@@ -18,17 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let the battle begins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R4-iA-Ec3">
-                                <rect key="frame" x="108.5" y="323" width="157" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-2X-p7r">
+                                <rect key="frame" x="141" y="318" width="92" height="30"/>
+                                <state key="normal" title="Send request"/>
+                                <connections>
+                                    <action selector="onFetchMarsPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FBQ-jv-yNs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1R4-iA-Ec3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JNX-Ai-H1l"/>
-                            <constraint firstItem="1R4-iA-Ec3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zXx-PH-IZV"/>
+                            <constraint firstItem="kCx-2X-p7r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WiV-rf-S53"/>
+                            <constraint firstItem="kCx-2X-p7r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a67-LA-3bG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
