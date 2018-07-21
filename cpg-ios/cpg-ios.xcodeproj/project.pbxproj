@@ -22,6 +22,7 @@
 		FAD689A421038C4600CAE1A0 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689A321038C4600CAE1A0 /* PhotoView.swift */; };
 		FAD689A82103968B00CAE1A0 /* RoverPhotoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689A72103968B00CAE1A0 /* RoverPhotoWorker.swift */; };
 		FAD689AB210396D900CAE1A0 /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689AA210396D900CAE1A0 /* NSPersistentContainer.swift */; };
+		FAD68A352103C82C00CAE1A0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD68A342103C82C00CAE1A0 /* Alert.swift */; };
 		FAE3A52A210284240061EB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3A529210284240061EB92 /* AppDelegate.swift */; };
 		FAE3A532210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAE3A530210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld */; };
 		FAE3A534210284250061EB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3A533210284250061EB92 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		FAD689A321038C4600CAE1A0 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		FAD689A72103968B00CAE1A0 /* RoverPhotoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhotoWorker.swift; sourceTree = "<group>"; };
 		FAD689AA210396D900CAE1A0 /* NSPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
+		FAD68A342103C82C00CAE1A0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FAE3A526210284240061EB92 /* CuriosityPhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriosityPhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE3A529210284240061EB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE3A531210284240061EB92 /* CuriosityPhotoGallery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CuriosityPhotoGallery.xcdatamodel; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				FAD6898721037F0B00CAE1A0 /* Protocol */,
 				FAD6898621037EFB00CAE1A0 /* Module */,
 				FAD689A62103958E00CAE1A0 /* Worker */,
+				FAD68A332103C82200CAE1A0 /* Helper */,
 				FAD689A9210396CC00CAE1A0 /* Extension */,
 				FAE3A529210284240061EB92 /* AppDelegate.swift */,
 			);
@@ -200,9 +203,25 @@
 		FAD689A9210396CC00CAE1A0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FAD689AA210396D900CAE1A0 /* NSPersistentContainer.swift */,
+				FAD68A322103C7F800CAE1A0 /* CoreData */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAD68A322103C7F800CAE1A0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FAD689AA210396D900CAE1A0 /* NSPersistentContainer.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FAD68A332103C82200CAE1A0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FAD68A342103C82C00CAE1A0 /* Alert.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		FAE3A51D210284240061EB92 = {
@@ -254,6 +273,7 @@
 				FAE3A523210284240061EB92 /* Frameworks */,
 				FAE3A524210284240061EB92 /* Resources */,
 				FAE3A580210285940061EB92 /* Embed Frameworks */,
+				90225C61C4C2429FD57646C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,6 +351,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		90225C61C4C2429FD57646C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-CuriosityPhotoGallery/Pods-CuriosityPhotoGallery-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CuriosityPhotoGallery/Pods-CuriosityPhotoGallery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -341,6 +383,7 @@
 				FAD689932103816E00CAE1A0 /* GenericView.swift in Sources */,
 				FAE3A532210284240061EB92 /* CuriosityPhotoGallery.xcdatamodeld in Sources */,
 				FAD6898C2103808900CAE1A0 /* PhotoGalleryViewModel.swift in Sources */,
+				FAD68A352103C82C00CAE1A0 /* Alert.swift in Sources */,
 				FAD689A421038C4600CAE1A0 /* PhotoView.swift in Sources */,
 				FAD6898021037EB100CAE1A0 /* PhotoGalleryViewController.swift in Sources */,
 				FAD6898921037F2C00CAE1A0 /* IdentifierReferencable.swift in Sources */,

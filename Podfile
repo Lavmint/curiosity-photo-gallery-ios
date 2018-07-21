@@ -8,10 +8,7 @@ project 'cpg-lib/wcpg-lib.xcodeproj'
 
 target 'CuriosityPhotoGallery' do
     project 'cpg-ios/cpg-ios.xcodeproj'
-       
-end
-
-target 'NasaService' do
-    project 'cpg-lib/cpg-lib.xcodeproj'
-    
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
+    pod 'NVActivityIndicatorView', '~> 4.3.0'
 end

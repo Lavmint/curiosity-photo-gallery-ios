@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxCocoa
 import NasaService
 
 class PhotoGalleryViewController: UIViewController, GenericView {
@@ -16,35 +17,29 @@ class PhotoGalleryViewController: UIViewController, GenericView {
     lazy var viewModel: PhotoGalleryViewModel = {
         return PhotoGalleryViewModel()
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Curiosity Photo Gallery"
-        viewModel.fetchImages { (error) in
-            DispatchQueue.main.async {
-                self.genericView.collectionView.reloadData()
+        
+        _ = viewModel.images.bind(to: genericView.collectionView.rx
+            .items(
+                cellIdentifier: ThumbnailCollectionViewCell.identifier,
+                cellType: ThumbnailCollectionViewCell.self
+            )) { item, data, cell in
+                cell.delegate = self
+                cell.imageView.image = data
             }
+            .disposed(by: viewModel.disposeBag)
+        
+        viewModel.fetchImages { (error) in
+            guard let err = error else { return }
+            self.present(Alert.ok(message: err.localizedDescription), animated: true, completion: nil)
         }
     }
 }
 
-extension PhotoGalleryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.images.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ThumbnailCollectionViewCell.identifier,
-            for: indexPath
-        )
-        if let thumbnailCell = cell as? ThumbnailCollectionViewCell {
-            thumbnailCell.delegate = self
-            thumbnailCell.imageView.image = viewModel.images[indexPath.item]
-        }
-        return cell
-    }
+extension PhotoGalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -79,6 +74,6 @@ extension PhotoGalleryViewController: ThumbnailCollectionViewCellDelegate {
     }
     
     func onLongPress(sender: ThumbnailCollectionViewCell) {
-        print("long press")
+        print("deleting...")
     }
 }

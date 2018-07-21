@@ -8,6 +8,8 @@
 
 import CoreData
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PhotoGalleryViewModel {
     
@@ -15,12 +17,17 @@ class PhotoGalleryViewModel {
         return RoverPhotoWorker(with: NSPersistentContainer.curiosityPhotoGalleryPersistentContainer)
     }()
     
-    var images: [UIImage] = []
+    private(set) var images = BehaviorRelay(value: [UIImage]())
+    lazy var disposeBag: DisposeBag = {
+        DisposeBag()
+    }()
     
     func fetchImages(completion: @escaping (Error?) -> Void) {
         photoWorker.photos(from: .curiosity) { (images, error) in
-            self.images = images
-            completion(error)
+            self.images.accept(images)
+            DispatchQueue.main.async {
+                completion(error)
+            }
         }
     }
 }
