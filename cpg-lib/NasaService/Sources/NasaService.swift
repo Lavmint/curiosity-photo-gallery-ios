@@ -29,7 +29,7 @@ public class NasaService {
     }()
     
     internal func perform<Result>(request: URLRequest, completion: @escaping (NasaResult<Result>) -> Void) {
-        print(request)
+        dprint(request)
         let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             completion(NasaResult<Result>.json(data: data, response: response, error: error))
         }

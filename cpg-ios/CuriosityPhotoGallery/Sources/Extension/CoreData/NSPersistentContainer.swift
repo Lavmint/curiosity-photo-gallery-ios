@@ -10,7 +10,7 @@ import CoreData
 
 extension NSPersistentContainer {
     
-    static let curiosityPhotoGalleryPersistentContainer: NSPersistentContainer = {
+    static func createCuriosityPhotoGalleryPersistentContainer() -> NSPersistentContainer {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -35,7 +35,7 @@ extension NSPersistentContainer {
             }
         })
         return container
-    }()
+    }
     
     func saveContext () {
         let context = self.viewContext

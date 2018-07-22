@@ -39,4 +39,61 @@ public class MarsPhotosAPIGroup {
         let request = service.requestBuilder.jsonRequest(method: .get, url: url, parameters: parameters)!
         service.perform(request: request, completion: completion)
     }
+    
+    public func photos(rover: Rover, earthDate: String, completion: @escaping (NasaResult<PhotosResult>) -> Void) {
+        let url = self.url
+            .appendingPathComponent("rovers")
+            .appendingPathComponent(Rover.curiosity.rawValue)
+            .appendingPathComponent("photos")
+        
+        let parameters: [String: Any] = [
+            "earth_date": earthDate
+        ]
+        
+        let request = service.requestBuilder.jsonRequest(method: .get, url: url, parameters: parameters)!
+        service.perform(request: request, completion: completion)
+    }
+    
+    public func photos(rover: MarsPhotosAPIGroup.Rover, daysAgo days: Int, completion: @escaping (NasaResult<PhotosResult>) -> Void) {
+        
+        var date = Date()
+        let offset = 24 * 60 * 60 * Double(days)
+        date = date.addingTimeInterval(-offset)
+        
+        let dateFromatter = DateFormatter()
+        dateFromatter.dateFormat = "yyyy-MM-dd"
+        
+        self.photos(rover: rover, earthDate: dateFromatter.string(from: date), completion: completion)
+    }
+    
+    /*
+     Метод-помощник.
+     Так как апи наса позволяет получить только фотки за текущий sol (latest_photos) или за явно указанный sol (photos)
+     то приходится использовать вместо page дни, иначе получится что нужно трекать страницу и день, а это жесть какая-то
+     уж лучше пусть траффик гуляет, но работает все как надо
+     рекурсивная функция, шатает сервер по дням пока не получит 25 фоток
+     */
+    public func lastest25Photos(rover: MarsPhotosAPIGroup.Rover, day: Int = 0, photos: [RoverPhoto] = [], ignoreIds: [Int] = [], completion: @escaping (NasaResult<PhotosResult>) -> Void) {
+        self.photos(rover: rover, daysAgo: day) { (result) in
+            switch result {
+            case .success(let r):
+                let p = r?.photos ?? []
+                var newPhotos: [RoverPhoto] = photos
+                for photo in p where !ignoreIds.contains(photo.id) {
+                    newPhotos.append(photo)
+                }
+                if newPhotos.count < 25 {
+                    self.lastest25Photos(rover: rover, day: day + 1, photos: newPhotos, ignoreIds: ignoreIds, completion: completion)
+                } else {
+                    let overridenResult = NasaResult<PhotosResult>.object(
+                        result: PhotosResult.init(photos: [RoverPhoto](newPhotos[0..<25]), error: nil),
+                        error: nil
+                    )
+                    completion(overridenResult)
+                }
+            case .failure:
+                completion(result)
+            }
+        }
+    }
 }

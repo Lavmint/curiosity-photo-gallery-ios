@@ -33,4 +33,23 @@ enum Alert {
         alertController.addAction(alertAction)
         return alertController
     }
+    
+    public static func confirm(message: AlertMessage, ok: (() -> Void)? = nil, cancel: (() -> Void)? = nil) -> UIAlertController {
+        
+        let alertController = UIAlertController(title: message.title, message: message.message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            ok?()
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(okAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+            cancel?()
+            alertController.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(cancelAction)
+        
+        return alertController
+    }
 }

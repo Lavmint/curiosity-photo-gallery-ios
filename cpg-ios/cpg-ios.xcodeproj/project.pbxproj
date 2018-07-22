@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4F95AAD2307B02B1112668DD /* Pods_CuriosityPhotoGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCDC807F3383431855E2C7D /* Pods_CuriosityPhotoGallery.framework */; };
 		FA0E92EB2104916100A37779 /* CDRoverPhotoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E92EA2104916100A37779 /* CDRoverPhotoStorage.swift */; };
+		FA0E92ED2104FFF800A37779 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E92EC2104FFF800A37779 /* Utils.swift */; };
+		FA0E92F22105015100A37779 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E92F12105015100A37779 /* Assembly.swift */; };
 		FAD6898021037EB100CAE1A0 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6897F21037EB100CAE1A0 /* PhotoGalleryViewController.swift */; };
 		FAD6898421037EF600CAE1A0 /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6898221037EF600CAE1A0 /* ThumbnailCollectionViewCell.swift */; };
 		FAD6898521037EF600CAE1A0 /* ThumbnailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD6898321037EF600CAE1A0 /* ThumbnailCollectionViewCell.xib */; };
@@ -51,6 +53,8 @@
 		6FCDC807F3383431855E2C7D /* Pods_CuriosityPhotoGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuriosityPhotoGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1308C2EAD52D788C10901C /* Pods-CuriosityPhotoGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuriosityPhotoGallery.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-CuriosityPhotoGallery/Pods-CuriosityPhotoGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0E92EA2104916100A37779 /* CDRoverPhotoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDRoverPhotoStorage.swift; sourceTree = "<group>"; };
+		FA0E92EC2104FFF800A37779 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FA0E92F12105015100A37779 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		FAD6897F21037EB100CAE1A0 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
 		FAD6898221037EF600CAE1A0 /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD6898321037EF600CAE1A0 /* ThumbnailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				FAD68A342103C82C00CAE1A0 /* Alert.swift */,
+				FA0E92EC2104FFF800A37779 /* Utils.swift */,
+				FA0E92F12105015100A37779 /* Assembly.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -398,11 +404,13 @@
 				FAD689A421038C4600CAE1A0 /* PhotoView.swift in Sources */,
 				FAD6898021037EB100CAE1A0 /* PhotoGalleryViewController.swift in Sources */,
 				FAD6898921037F2C00CAE1A0 /* IdentifierReferencable.swift in Sources */,
+				FA0E92ED2104FFF800A37779 /* Utils.swift in Sources */,
 				FAD689AB210396D900CAE1A0 /* NSPersistentContainer.swift in Sources */,
 				FAD6899E2103831700CAE1A0 /* NibLoadableView.swift in Sources */,
 				FAD689A82103968B00CAE1A0 /* RoverPhotoWorker.swift in Sources */,
 				FAD68991210380E900CAE1A0 /* PhotoViewController.swift in Sources */,
 				FAD6898421037EF600CAE1A0 /* ThumbnailCollectionViewCell.swift in Sources */,
+				FA0E92F22105015100A37779 /* Assembly.swift in Sources */,
 				FAD6899C210382DC00CAE1A0 /* PhotoGalleryView.swift in Sources */,
 				FAE3A52A210284240061EB92 /* AppDelegate.swift in Sources */,
 				FA0E92EB2104916100A37779 /* CDRoverPhotoStorage.swift in Sources */,
@@ -545,7 +553,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8245AS67CL;
 				INFOPLIST_FILE = CuriosityPhotoGallery/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -561,7 +572,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8245AS67CL;
 				INFOPLIST_FILE = CuriosityPhotoGallery/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

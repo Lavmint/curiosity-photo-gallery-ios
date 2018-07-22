@@ -47,15 +47,14 @@ public enum NasaResult<Result: Decodable> {
             return .failure(NasaResultError.client(clientError))
         }
         
-        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
-            let errorInfo = NetworkError(
-                code: httpResponse.statusCode,
-                message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode)
-            )
-            return .failure(NasaResultError.network(errorInfo))
-        }
-        
         guard let responseData = data else {
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                let errorInfo = NetworkError(
+                    code: httpResponse.statusCode,
+                    message: HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode)
+                )
+                return .failure(NasaResultError.network(errorInfo))
+            }
             return .success(nil)
         }
         print(jsonData: responseData)
@@ -71,13 +70,22 @@ public enum NasaResult<Result: Decodable> {
                 return .success(result)
             }
         } catch {
-            print(error)
+            dprint(error)
             return .success(nil)
+        }
+    }
+    
+    public static func object(result: Result?, error: Error?) -> NasaResult<Result> {
+        if let err = error {
+            return .failure(err)
+        } else {
+            return .success(result)
         }
     }
 }
 
 func print(jsonData: Data) {
+    guard isDebug else { return }
     guard let jsonObject = try? JSONSerialization.jsonObject(with: jsonData, options: []) else { return }
     guard let data = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) else { return }
     guard let str = String.init(data: data, encoding: .utf8) else { return }

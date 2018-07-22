@@ -10,11 +10,13 @@ import CoreData
 import UIKit
 import RxSwift
 import RxCocoa
+import NasaService
 
-class PhotoGalleryViewModel {
+class PhotoGalleryViewModel: Assemblable {
     
+    var assembly: Assembly!
     lazy var photoWorker: RoverPhotoWorker = {
-        return RoverPhotoWorker(with: NSPersistentContainer.curiosityPhotoGalleryPersistentContainer)
+        return RoverPhotoWorker(nasaService: assembly.nasaService, with: assembly.cpgPersistentContainer)
     }()
     
     private(set) var photos = BehaviorRelay(value: [RoverPhotoProtocol]())
@@ -29,5 +31,16 @@ class PhotoGalleryViewModel {
                 completion(error)
             }
         }
+    }
+    
+    func delete(itemAtIndex index: Int) {
+        
+        var value = photos.value
+        let itemToDelete = value[index]
+        
+        dprint("Deleting item with id: \(itemToDelete.id)")
+        value.remove(at: index)
+        photos.accept(value)
+        photoWorker.delete(photoId: itemToDelete.id)
     }
 }

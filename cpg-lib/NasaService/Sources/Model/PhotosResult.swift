@@ -10,3 +10,12 @@ public struct LatestPhotosResult: Decodable, FailableResult {
     public let latestPhotos: [RoverPhoto]?
     public let error: NasaServiceError?
 }
+
+public struct PhotosResult: Decodable, FailableResult {
+    public let photos: [RoverPhoto]?
+    public let error: NasaServiceError?
+    public init(photos: [RoverPhoto], error: NasaServiceError?) {
+        self.photos = photos
+        self.error = error
+    }
+}

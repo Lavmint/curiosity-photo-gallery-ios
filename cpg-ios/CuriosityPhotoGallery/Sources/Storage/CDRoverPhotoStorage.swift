@@ -25,7 +25,7 @@ class CDRoverPhotoStorage {
         do {
             try context.save()
         } catch {
-            print(error)
+            dprint(error)
         }
     }
     
@@ -55,21 +55,20 @@ class CDRoverPhotoStorage {
             }
             return results.first
         } catch {
-            print(error)
+            dprint(error)
         }
         return nil
     }
     
-    func fetch() -> [CDRoverPhoto] {
+    func fetch(isDeleted: Bool = false) -> [CDRoverPhoto] {
         let request = NSFetchRequest<CDRoverPhoto>()
         request.entity = CDRoverPhoto.entity()
-        request.fetchLimit = 25
-        request.predicate = NSPredicate(format: "isDropped != %@", NSNumber(value: true))
+        request.predicate = NSPredicate(format: "isDropped = %@", NSNumber(value: isDeleted))
         var photos: [CDRoverPhoto] = []
         do {
             photos = try context.fetch(request)
         } catch {
-            print(error)
+            dprint(error)
         }
         return photos
     }

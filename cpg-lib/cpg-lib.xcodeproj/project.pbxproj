@@ -7,24 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0E92F02105009700A37779 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E92EF2105009700A37779 /* Utils.swift */; };
 		FAD68960210351E900CAE1A0 /* NasaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6895F210351E900CAE1A0 /* NasaService.swift */; };
 		FAD689662103574C00CAE1A0 /* MarsPhotosAPIGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689652103574C00CAE1A0 /* MarsPhotosAPIGroup.swift */; };
 		FAD6896B21035D9100CAE1A0 /* NasaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6896A21035D9100CAE1A0 /* NasaResult.swift */; };
 		FAD6896E2103600C00CAE1A0 /* NasaServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6896D2103600C00CAE1A0 /* NasaServiceError.swift */; };
 		FAD689702103602600CAE1A0 /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6896F2103602600CAE1A0 /* RoverPhoto.swift */; };
-		FAD689742103604800CAE1A0 /* LatestPhotosResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689732103604800CAE1A0 /* LatestPhotosResult.swift */; };
+		FAD689742103604800CAE1A0 /* PhotosResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689732103604800CAE1A0 /* PhotosResult.swift */; };
 		FAD689772103609900CAE1A0 /* FailableResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689762103609900CAE1A0 /* FailableResult.swift */; };
 		FAD68979210361D200CAE1A0 /* NasaRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD68978210361D200CAE1A0 /* NasaRequestBuilder.swift */; };
 		FAE3A5772102855E0061EB92 /* NasaService.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE3A5752102855E0061EB92 /* NasaService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0E92EF2105009700A37779 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FAD6895F210351E900CAE1A0 /* NasaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaService.swift; sourceTree = "<group>"; };
 		FAD689652103574C00CAE1A0 /* MarsPhotosAPIGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotosAPIGroup.swift; sourceTree = "<group>"; };
 		FAD6896A21035D9100CAE1A0 /* NasaResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaResult.swift; sourceTree = "<group>"; };
 		FAD6896D2103600C00CAE1A0 /* NasaServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaServiceError.swift; sourceTree = "<group>"; };
 		FAD6896F2103602600CAE1A0 /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
-		FAD689732103604800CAE1A0 /* LatestPhotosResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestPhotosResult.swift; sourceTree = "<group>"; };
+		FAD689732103604800CAE1A0 /* PhotosResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResult.swift; sourceTree = "<group>"; };
 		FAD689762103609900CAE1A0 /* FailableResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableResult.swift; sourceTree = "<group>"; };
 		FAD68978210361D200CAE1A0 /* NasaRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaRequestBuilder.swift; sourceTree = "<group>"; };
 		FAE3A5732102855E0061EB92 /* NasaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NasaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,12 +45,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0E92EE2105008500A37779 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA0E92EF2105009700A37779 /* Utils.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		FAD6895E210351D500CAE1A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				FAD689752103608C00CAE1A0 /* Protocol */,
 				FAD6896C21035FF200CAE1A0 /* Model */,
 				FAD68962210356C500CAE1A0 /* APIGroup */,
+				FA0E92EE2105008500A37779 /* Helper */,
 				FAD68978210361D200CAE1A0 /* NasaRequestBuilder.swift */,
 				FAD6896A21035D9100CAE1A0 /* NasaResult.swift */,
 				FAD6895F210351E900CAE1A0 /* NasaService.swift */,
@@ -68,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD6896D2103600C00CAE1A0 /* NasaServiceError.swift */,
-				FAD689732103604800CAE1A0 /* LatestPhotosResult.swift */,
+				FAD689732103604800CAE1A0 /* PhotosResult.swift */,
 				FAD6896F2103602600CAE1A0 /* RoverPhoto.swift */,
 			);
 			path = Model;
@@ -189,11 +200,12 @@
 			files = (
 				FAD689702103602600CAE1A0 /* RoverPhoto.swift in Sources */,
 				FAD68979210361D200CAE1A0 /* NasaRequestBuilder.swift in Sources */,
+				FA0E92F02105009700A37779 /* Utils.swift in Sources */,
 				FAD689662103574C00CAE1A0 /* MarsPhotosAPIGroup.swift in Sources */,
 				FAD68960210351E900CAE1A0 /* NasaService.swift in Sources */,
 				FAD689772103609900CAE1A0 /* FailableResult.swift in Sources */,
 				FAD6896E2103600C00CAE1A0 /* NasaServiceError.swift in Sources */,
-				FAD689742103604800CAE1A0 /* LatestPhotosResult.swift in Sources */,
+				FAD689742103604800CAE1A0 /* PhotosResult.swift in Sources */,
 				FAD6896B21035D9100CAE1A0 /* NasaResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +346,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NasaService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.service.nasa;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -357,7 +373,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NasaService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.service.nasa;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

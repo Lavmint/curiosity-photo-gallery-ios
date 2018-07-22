@@ -7,19 +7,29 @@
 //
 
 import UIKit
+import NasaService
 import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var assembly: Assembly?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Override point for customization after application launch.
+        //Provide valid apiKey to avoid rate limit
+        let assembly = Assembly(
+            nasaService: NasaService(apiKey: "ZnYayn5XNFJLd6JkUXQX1HKXEfk3DdjLYIT991j6"),
+            cpgPersistentContainer: NSPersistentContainer.createCuriosityPhotoGalleryPersistentContainer()
+        )
+        self.assembly = assembly
+        
+        let galleryController = PhotoGalleryViewController()
+        galleryController.assembly = assembly
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: PhotoGalleryViewController())
+        window?.rootViewController = UINavigationController(rootViewController: galleryController)
         window?.makeKeyAndVisible()
         
         return true
@@ -46,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        NSPersistentContainer.curiosityPhotoGalleryPersistentContainer.saveContext()
+        assembly?.cpgPersistentContainer.saveContext()
     }
 
 }
