@@ -22,13 +22,13 @@ class PhotoGalleryViewController: UIViewController, GenericView {
         super.viewDidLoad()
         navigationItem.title = "Curiosity Photo Gallery"
         
-        _ = viewModel.images.bind(to: genericView.collectionView.rx
+        _ = viewModel.photos.bind(to: genericView.collectionView.rx
             .items(
                 cellIdentifier: ThumbnailCollectionViewCell.identifier,
                 cellType: ThumbnailCollectionViewCell.self
             )) { item, data, cell in
                 cell.delegate = self
-                cell.imageView.image = data
+                cell.imageView.image = data.image
             }
             .disposed(by: viewModel.disposeBag)
         

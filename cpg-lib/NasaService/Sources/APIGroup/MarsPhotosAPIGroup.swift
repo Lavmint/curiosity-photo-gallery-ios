@@ -11,7 +11,7 @@ import Foundation
 public class MarsPhotosAPIGroup {
     
     public enum Rover: String {
-        case curiosity = "rovers/curiosity"
+        case curiosity
     }
     
     weak private(set) var service: NasaService!
@@ -29,7 +29,10 @@ public class MarsPhotosAPIGroup {
     }
     
     public func latestPhotos(rover: Rover, page: Int, completion: @escaping (NasaResult<LatestPhotosResult>) -> Void) {
-        let url = self.url.appendingPathComponent(Rover.curiosity.rawValue).appendingPathComponent("latest_photos")
+        let url = self.url
+            .appendingPathComponent("rovers")
+            .appendingPathComponent(Rover.curiosity.rawValue)
+            .appendingPathComponent("latest_photos")
         let parameters: [String: Any] = [
             "page": page
         ]

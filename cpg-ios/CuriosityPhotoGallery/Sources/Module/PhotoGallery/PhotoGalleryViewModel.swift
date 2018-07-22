@@ -17,14 +17,14 @@ class PhotoGalleryViewModel {
         return RoverPhotoWorker(with: NSPersistentContainer.curiosityPhotoGalleryPersistentContainer)
     }()
     
-    private(set) var images = BehaviorRelay(value: [UIImage]())
+    private(set) var photos = BehaviorRelay(value: [RoverPhotoProtocol]())
     lazy var disposeBag: DisposeBag = {
         DisposeBag()
     }()
     
     func fetchImages(completion: @escaping (Error?) -> Void) {
-        photoWorker.photos(from: .curiosity) { (images, error) in
-            self.images.accept(images)
+        photoWorker.photos(from: .curiosity) { (photos, error) in
+            self.photos.accept(photos)
             DispatchQueue.main.async {
                 completion(error)
             }

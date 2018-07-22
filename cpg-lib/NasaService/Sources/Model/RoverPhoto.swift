@@ -7,5 +7,6 @@
 //
 
 public class RoverPhoto: Decodable {
+    public let id: Int
     public let imgSrc: URL
 }

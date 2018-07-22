@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		007488E71A7E6E8ECAEACEE0 /* Pods_NasaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CC0A062704DF521DFD6744 /* Pods_NasaService.framework */; };
 		FAD68960210351E900CAE1A0 /* NasaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6895F210351E900CAE1A0 /* NasaService.swift */; };
 		FAD689662103574C00CAE1A0 /* MarsPhotosAPIGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD689652103574C00CAE1A0 /* MarsPhotosAPIGroup.swift */; };
 		FAD6896B21035D9100CAE1A0 /* NasaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6896A21035D9100CAE1A0 /* NasaResult.swift */; };
@@ -20,9 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0909EE3E6B64F82606D9D7B0 /* Pods-NasaService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaService.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-NasaService/Pods-NasaService.debug.xcconfig"; sourceTree = "<group>"; };
-		E9CC0A062704DF521DFD6744 /* Pods_NasaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NasaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4B3AFA3BF52C2D03FFDAA77 /* Pods-NasaService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NasaService.release.xcconfig"; path = "../Pods/Target Support Files/Pods-NasaService/Pods-NasaService.release.xcconfig"; sourceTree = "<group>"; };
 		FAD6895F210351E900CAE1A0 /* NasaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaService.swift; sourceTree = "<group>"; };
 		FAD689652103574C00CAE1A0 /* MarsPhotosAPIGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotosAPIGroup.swift; sourceTree = "<group>"; };
 		FAD6896A21035D9100CAE1A0 /* NasaResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NasaResult.swift; sourceTree = "<group>"; };
@@ -41,30 +37,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				007488E71A7E6E8ECAEACEE0 /* Pods_NasaService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		046A214B4E2C5B021C14FB00 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E9CC0A062704DF521DFD6744 /* Pods_NasaService.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		67A492A4C1C3A51E4268F678 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0909EE3E6B64F82606D9D7B0 /* Pods-NasaService.debug.xcconfig */,
-				F4B3AFA3BF52C2D03FFDAA77 /* Pods-NasaService.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		FAD6895E210351D500CAE1A0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +87,6 @@
 			children = (
 				FAE3A5742102855E0061EB92 /* NasaService */,
 				FAE3A564210285320061EB92 /* Products */,
-				67A492A4C1C3A51E4268F678 /* Pods */,
-				046A214B4E2C5B021C14FB00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,7 +126,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE3A5782102855E0061EB92 /* Build configuration list for PBXNativeTarget "NasaService" */;
 			buildPhases = (
-				A53B92CA2827C61964600E5D /* [CP] Check Pods Manifest.lock */,
 				FAE3A56E2102855E0061EB92 /* Sources */,
 				FAE3A56F2102855E0061EB92 /* Frameworks */,
 				FAE3A5702102855E0061EB92 /* Headers */,
@@ -206,27 +181,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A53B92CA2827C61964600E5D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NasaService-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAE3A56E2102855E0061EB92 /* Sources */ = {
@@ -369,7 +323,6 @@
 		};
 		FAE3A5792102855E0061EB92 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0909EE3E6B64F82606D9D7B0 /* Pods-NasaService.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -381,11 +334,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NasaService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.service.nasa;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -397,7 +346,6 @@
 		};
 		FAE3A57A2102855E0061EB92 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4B3AFA3BF52C2D03FFDAA77 /* Pods-NasaService.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -409,11 +357,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NasaService/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lavmint.cpg.service.nasa;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
